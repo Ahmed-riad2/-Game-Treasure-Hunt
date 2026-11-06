@@ -1,0 +1,36 @@
+
+player_name = input("Enter your name: ")
+
+coins = 100
+
+def welcome():
+    print("Welcome to Treasure Hunt!")
+    print("Hello", player_name)
+
+def choose_path():
+    print("\nChoose your path:")
+    print("1. Forest")
+    print("2. Cave")
+
+    choice = input("Your choice: ")
+
+    if choice == "1":
+        print("You found 50 coins!")
+        return 50
+    elif choice == "2":
+        print("You found 30 coins!")
+        return 30
+    else:
+        print("Invalid choice!")
+        return 0
+
+def show_score():
+    print("\nPlayer:", player_name)
+    print("Your Coins:", coins)
+
+welcome()
+
+reward = choose_path()
+coins = coins + reward
+
+show_score()
